@@ -18,20 +18,29 @@ const App = () => {
 
     if(mrWorldwide){
         return <div>
-        <h1>Bitcoin Price</h1>
-        <div className="world"> 
-      <div className="USD">
-      <div className="usaCurrency">{mrWorldwide.USD.description}</div>
-      <div className="USDprice">$ {mrWorldwide.USD.rate} {mrWorldwide.USD.code}</div>
-      </div>
-      <div className="GBP">
-          <div className="usaCurrency">{mrWorldwide.GBP.description}</div>
-      <div className="USDprice">£ {mrWorldwide.GBP.rate} {mrWorldwide.GBP.code}</div>
-      </div>
-      <div className="EUR">
-          <div className="usaCurrency">{mrWorldwide.EUR.description}</div>
-      <div className="USDprice">€ {mrWorldwide.EUR.rate} {mrWorldwide.EUR.code}</div>
-      </div>
+        
+      <div className="container"> 
+        <div className="card">
+          <div className="content">
+            <h2>USD</h2>
+            <div className="usaCurrency">USD/BTC</div>
+            <div className="USDprice">$ {mrWorldwide.USD.rate}</div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="content">
+            <h2>GBP</h2>
+            <div className="usaCurrency">GBP/BTC</div>
+            <div className="USDprice">£ {mrWorldwide.GBP.rate}</div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="content">
+            <h2>EUR</h2>
+            <div className="usaCurrency">EUR/BTC</div>
+            <div className="USDprice">€ {mrWorldwide.EUR.rate}</div>
+          </div>
+        </div>
       </div>
     
   </div>
