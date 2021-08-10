@@ -18,7 +18,6 @@ const App = () => {
 
     if(mrWorldwide){
         return <div>
-        
       <div className="container"> 
         <div className="card">
           <div className="content">
