@@ -8,9 +8,14 @@ import Ethereum from "../eth";
 
 class Navbar extends React.Component{
     state = { clicked: false }
+    brgr = document.querySelector('.burger');
 
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
+    }
+    navSlide = () => {
+        const nav = document.querySelector('.nav-menu');
+        nav.classList.toggle('nav-active');
     }
     
     render(){
@@ -21,10 +26,10 @@ class Navbar extends React.Component{
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
-                <ul className={ this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+                <ul className='nav-menu'>
                     {MenuItems.map((item, index) => {
                         return (
-                            <li key={index}>
+                            <li key={index} className='link'>
                                 <Link to={item.url} className={item.cName}>
                                     {item.title}
                                 </Link>
@@ -32,6 +37,11 @@ class Navbar extends React.Component{
                         )
                     })}
                 </ul>
+                <div className="burger" onClick={this.navSlide}>
+                    <div className="line1"></div>
+                    <div className="line2"></div>
+                    <div className="line3"></div>
+                </div>
             </nav>
             <Routes>
                 <Route exact path="/ada" element={<Cardano />}/>
